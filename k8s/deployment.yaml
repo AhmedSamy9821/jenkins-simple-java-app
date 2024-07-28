@@ -1,24 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: school-website
+  name: java-app
   labels:
-    app: school-website
+    app: java-app
 spec:
   selector:
     matchLabels:
-        app: school-website
-  replicas: 2
+        app: java-app
+  replicas: 1
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        app: school-website
+        app: java-app
     spec:
       containers:
-        - name: school-website
-          image: ahmedsamy98/school_website:latest
+        - name: java-app
+          image: ahmedsamy98/javaapp:latest
           ports:
             - containerPort: 80
-              
+              protocol: TCP
+          imagePullPolicy: Always
