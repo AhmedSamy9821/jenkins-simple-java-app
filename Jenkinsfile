@@ -32,6 +32,7 @@ pipeline{
                      withAWS(credentials: 'aws-cli', region: 'us-east-1'){
                     sh 'aws eks update-kubeconfig --region us-east-1 --name java-app'
                     sh 'echo $PWD'
+                    sh 'which kubectl'
                     sh 'kubectl apply -f ./k8s/deployment.yaml'
                     sh 'kubectl expose deployment java-app --type=NodePort --port=80 --node-port=30000'
                      }
