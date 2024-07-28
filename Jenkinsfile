@@ -34,7 +34,7 @@ pipeline{
                     sh 'echo $PWD'
                     sh 'which kubectl'
                     sh 'kubectl apply -f ./k8s/deployment.yaml'
-                    sh 'kubectl expose deployment java-app --type=NodePort --port=80 --node-port=30000'
+                    sh 'kubectl expose deployment java-app --type=NodePort --port=80 '
                      }
                     
                 }
