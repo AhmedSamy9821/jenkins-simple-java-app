@@ -5,4 +5,6 @@ RUN mvn -f /app/pom.xml clean package
 
 RUN mv /app/target/*.jar app.jar
 
+sleep 3000
+
 ENTRYPOINT ["java","-jar","/app.jar"]
