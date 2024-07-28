@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: school_website
+  name: school-website
   labels:
-    app: school_website
+    app: school-website
 spec:
   selector:
     matchLabels:
-        app: school_website
+        app: school-website
   replicas: 2
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        app: school_website
+        app: school-website
     spec:
       containers:
-        - name: school_website
+        - name: school-website
           image: ahmedsamy98/school_website:latest
           ports:
             - containerPort: 80
