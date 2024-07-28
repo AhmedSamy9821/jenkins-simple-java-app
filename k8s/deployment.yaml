@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: java-app
-          image: AhmedSamy98/javaapp:latest
+          image: ahmedsamy98/java-app:latest
           ports:
             - containerPort: 80
               protocol: TCP
